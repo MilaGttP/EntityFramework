@@ -5,9 +5,9 @@ VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFramework", "EntityFramework.csproj", "{4CD75002-C130-4D06-B148-FC2EC38CD26B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelsLibrary", "..\ModelsLibrary\ModelsLibrary.csproj", "{A614EFD7-7A1A-4799-BB74-E4CAD3C81CEB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "..\ModelsLibrary\Models.csproj", "{A614EFD7-7A1A-4799-BB74-E4CAD3C81CEB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InheritanceDBContext", "..\InheritanceDBContext\InheritanceDBContext.csproj", "{682F3633-7704-4C9C-ABEA-3FF175DB41E5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TournamentDBContext", "..\InheritanceDBContext\TournamentDBContext.csproj", "{682F3633-7704-4C9C-ABEA-3FF175DB41E5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
