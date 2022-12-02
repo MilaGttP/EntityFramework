@@ -81,17 +81,38 @@ namespace EntityFramework
         }
 
         //----------------- Third lab task --------------------------
-        public static void AddTeam()
+        public static void AddTeam(Team team)
         {
-
+            using (TournamentDBContext db = new TournamentDBContext())
+            {
+                Team checkTeam = db.Teams.Where((x) => x.Name == team.Name).FirstOrDefault();
+                if (checkTeam == null)
+                {
+                    db.Teams.Add(team);
+                    db.SaveChanges();
+                }
+            }
         }
         public static void EditTeam()
         {
 
         }
-        public static void DeleteTeam()
+        public static void DeleteTeam(Team team)
         {
-
+            using (TournamentDBContext db = new TournamentDBContext())
+            {
+                Team checkTeam = db.Teams.Where((x) => x.Name == team.Name && x.City == team.City).FirstOrDefault();
+                if (checkTeam == null) throw new Exception("There isn`t such a team!");
+                else
+                {
+                    Console.Write("Are you sure?"); string answer = Console.ReadLine();
+                    if (answer == "Yes" || answer == "yes")
+                    {
+                        db.Teams.Remove(team);
+                        db.SaveChanges();
+                    }
+                }
+            }
         }
     }
 }
