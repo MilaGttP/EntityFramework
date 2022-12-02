@@ -9,8 +9,8 @@ namespace EntityFramework
         static void Main()
         {
             //TestIntroductionHW();
-            TestLinqLab();
-            TestLinqHW();
+            //TestLinqLab();
+            TestMultiTableHW();
         }
         static void TestIntroductionHW()
         {
@@ -47,9 +47,17 @@ namespace EntityFramework
             team = LinqWork.GetMaxVictoriesAmountTeam();
             Console.WriteLine($"Team amount of victories (GetMaxVictoriesAmountTeam): {team.VictoriesAmount}");
         }
-        static void TestLinqHW()
-        {
 
+        static void TestMultiTableHW()
+        {
+            try
+            {
+                using (TournamentDBContext db = new TournamentDBContext())
+                {
+                    db.SaveChanges();
+                }
+            }
+            catch (Exception ex) { Console.WriteLine(ex.Message); }
         }
     }
 }
