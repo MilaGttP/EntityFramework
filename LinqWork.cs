@@ -46,6 +46,52 @@ namespace EntityFramework
         }
 
         //----------------- Second lab task --------------------------
+        public static Team GetMaxVictoriesAmountTeam()
+        {
+            Team team = new Team();
+            using (TournamentDBContext db = new TournamentDBContext())
+            {
+                team = (from t in db.Teams
+                        where t.VictoriesAmount == db.Teams.Select(t => t.VictoriesAmount).Max()
+                        select t).Single<Team>();
+            }
+            return team;
+        }
+        public static Team GetMaxDefeatsAmountTeam()
+        {
+            Team team = new Team();
+            using (TournamentDBContext db = new TournamentDBContext())
+            {
+                team = (from t in db.Teams
+                        where t.DefeatsAmount == db.Teams.Select(t => t.DefeatsAmount).Max()
+                        select t).Single<Team>();
+            }
+            return team;
+        }
+        public static Team GetMaxDrawsAmountTeam()
+        {
+            Team team = new Team();
+            using (TournamentDBContext db = new TournamentDBContext())
+            {
+                team = (from t in db.Teams
+                        where t.DrawsAmount == db.Teams.Select(t => t.DrawsAmount).Max()
+                        select t).Single<Team>();
+            }
+            return team;
+        }
 
+        //----------------- Third lab task --------------------------
+        public static void AddTeam()
+        {
+
+        }
+        public static void EditTeam()
+        {
+
+        }
+        public static void DeleteTeam()
+        {
+
+        }
     }
 }

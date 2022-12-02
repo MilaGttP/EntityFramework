@@ -42,6 +42,10 @@ namespace EntityFramework
             List<Team> teamsByCity = new List<Team>();
             teamsByCity = LinqWork.GetTeamsByName("Madrid");
             Console.WriteLine($"Teams count (GetTeamsByCity): {teamsByCity.Count()}");
+
+            Team team = new Team();
+            team = LinqWork.GetMaxVictoriesAmountTeam();
+            Console.WriteLine($"Team amount of victories (GetMaxVictoriesAmountTeam): {team.VictoriesAmount}");
         }
         static void TestLinqHW()
         {
