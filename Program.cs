@@ -8,6 +8,12 @@ namespace EntityFramework
     {
         static void Main()
         {
+            //TestIntroductionHW();
+            TestLinqLab();
+            TestLinqHW();
+        }
+        static void TestIntroductionHW()
+        {
             try
             {
                 using (TournamentDBContext db = new TournamentDBContext())
@@ -26,6 +32,20 @@ namespace EntityFramework
                 }
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); }
+        }
+        static void TestLinqLab()
+        {
+            List<Team> teamsByName = new List<Team>();
+            teamsByName = LinqWork.GetTeamsByName("Real");
+            Console.WriteLine($"Teams count (GetTeamsByName): {teamsByName.Count()}");
+
+            List<Team> teamsByCity = new List<Team>();
+            teamsByCity = LinqWork.GetTeamsByName("Madrid");
+            Console.WriteLine($"Teams count (GetTeamsByCity): {teamsByCity.Count()}");
+        }
+        static void TestLinqHW()
+        {
+
         }
     }
 }
