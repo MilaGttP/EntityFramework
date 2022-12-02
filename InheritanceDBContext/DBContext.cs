@@ -1,3 +1,4 @@
+﻿
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
@@ -8,7 +9,12 @@ namespace DBContext
     public class TournamentDBContext : DbContext
     {
         public DbSet <Team> Teams { get; set; }
-        public TournamentDBContext() => Database.EnsureCreated();
+        public DbSet <Person> Players { get; set; }
+        public DbSet <Playings> Playings { get; set; }
+        public TournamentDBContext()
+        {
+            Database.EnsureCreated();
+        }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(@"Data Source=WIN-DB5IFPI2TC8\SQLEXPRESS;Initial Catalog=Tournaments;Integrated Security=True;
